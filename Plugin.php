@@ -22,7 +22,6 @@ class Plugin extends AbstractPlugin
 
     public function enable(): void
     {
-        Artisan::call('optimize');
-        exec('cd '.base_path().' && php artisan horizon:terminate');
+        exec('cd '.base_path().' && php artisan optimize && php artisan horizon:terminate');
     }
 }
