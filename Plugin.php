@@ -22,10 +22,7 @@ class Plugin extends AbstractPlugin
 
     public function enable(): void
     {
-        Application::starting(function ($artisan) {
-            $artisan->resolveCommands(TerminateCommand::class);
-        });
         Artisan::call('optimize');
-        Artisan::call('horizon:terminate');
+        exec('cd '.base_path().' && php artisan horizon:terminate');
     }
 }
