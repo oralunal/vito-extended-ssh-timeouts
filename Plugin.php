@@ -3,8 +3,10 @@
 namespace App\Vito\Plugins\OralUnal\IncreaseQueueTimeForVito;
 
 use App\Plugins\AbstractPlugin;
+use Illuminate\Console\Application;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
+use Laravel\Horizon\Console\TerminateCommand;
 
 class Plugin extends AbstractPlugin
 {
@@ -20,6 +22,9 @@ class Plugin extends AbstractPlugin
 
     public function enable(): void
     {
+        Application::starting(function ($artisan) {
+            $artisan->resolveCommands(TerminateCommand::class);
+        });
         Artisan::call('optimize');
         Artisan::call('horizon:terminate');
     }
