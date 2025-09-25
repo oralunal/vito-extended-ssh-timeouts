@@ -13,9 +13,7 @@ class Plugin extends AbstractPlugin
 
     public function boot(): void
     {
-        Config::set('horizon.defaults.ssh.timeout', 2400);
-        Config::set('horizon.defaults.ssh.memory', 2048);
-        Config::set('horizon.defaults.ssh-unique.timeout', 2400);
-        Config::set('horizon.defaults.ssh-unique.memory', 2048);
+        Config::set('horizon.defaults.ssh.timeout', 3000);
+        Config::set('horizon.defaults.ssh-unique.timeout', 3000);
     }
 }
