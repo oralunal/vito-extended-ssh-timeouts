@@ -20,6 +20,7 @@ class Plugin extends AbstractPlugin
 
     public function enable(): void
     {
+        Artisan::call('optimize');
         Artisan::call('horizon:terminate');
     }
 }
