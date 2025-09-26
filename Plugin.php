@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Vito\Plugins\OralUnal\IncreaseQueueTimeForVito;
+namespace App\Vito\Plugins\OralUnal\VitoExtendedSshTimeouts;
 
 use App\Plugins\AbstractPlugin;
-use Illuminate\Console\Application;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
-use Laravel\Horizon\Console\TerminateCommand;
 
 class Plugin extends AbstractPlugin
 {
-    protected string $name = 'Increase Queue Time For Vito';
+    protected string $name = 'Vito Extended SSH Timeouts';
 
-    protected string $description = 'This plugin increases the queue limits for Vito. When working with large databases, this can be useful.';
+    protected string $description = 'Extends \'ssh\' queue timeout limits in Vito server management to prevent long-running operations from timing out.';
 
     public function boot(): void
     {
