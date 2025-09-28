@@ -21,4 +21,9 @@ class Plugin extends AbstractPlugin
     {
         exec('cd '.base_path().' && php artisan optimize && php artisan horizon:terminate');
     }
+
+    public function disable(): void
+    {
+        exec('cd '.base_path().' && php artisan optimize && php artisan horizon:terminate');
+    }
 }
