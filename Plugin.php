@@ -2,6 +2,7 @@
 
 namespace App\Vito\Plugins\OralUnal\VitoExtendedSshTimeouts;
 
+use App\Models\User;
 use App\Plugins\AbstractPlugin;
 use Illuminate\Support\Facades\Config;
 
@@ -15,6 +16,7 @@ class Plugin extends AbstractPlugin
     {
         Config::set('queue.connections.redis.retry_after', 3050);
         Config::set('horizon.defaults.ssh.timeout', 3000);
+        Config::set('horizon.defaults.ssh-unique.timeout', 3000);
     }
 
     public function enable(): void
