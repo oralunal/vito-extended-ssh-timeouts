@@ -14,9 +14,9 @@ class Plugin extends AbstractPlugin
 
     public function boot(): void
     {
-        Config::set('queue.connections.redis.retry_after', 3050);
-        Config::set('horizon.defaults.ssh.timeout', 3000);
-        Config::set('horizon.defaults.ssh-unique.timeout', 3000);
+        Config::set('queue.connections.redis.retry_after', 7250);
+        Config::set('horizon.defaults.ssh.timeout', 7200);
+        Config::set('horizon.defaults.ssh-unique.timeout', 7200);
     }
 
     public function enable(): void

@@ -22,8 +22,9 @@ This plugin extends the timeout configuration to more generous limits:
 The plugin modifies Laravel's configuration at runtime:
 
 ```php
-Config::set('queue.connections.redis.retry_after', 3050);
-Config::set('horizon.defaults.ssh.timeout', 3000);
+Config::set('queue.connections.redis.retry_after', 7250);
+Config::set('horizon.defaults.ssh.timeout', 7200);
+Config::set('horizon.defaults.ssh-unique.timeout', 7200);
 ```
 
 When enabled, it runs:
